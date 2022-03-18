@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 0e80702f0b731844f8763115c60a4474
+  m_SerializeEntries:
+  - m_GUID: 5cd51aa986f608f4082fbdc7aafd35ac
+    m_Address: Assets/Karting/Localization Settings.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - default
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 57d4b557f591891439989dce44e5e438, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: dcf33ef73ff7c4a4e9efb1f0b1cf6ee7, type: 2}
+    - {fileID: 11400000, guid: 3b90108e593aa6348b0088a3c2b6ab03, type: 2}
