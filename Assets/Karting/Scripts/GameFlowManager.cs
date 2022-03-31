@@ -65,7 +65,7 @@ public class GameFlowManager : MonoBehaviour
     {
         if (LevelManager.instance != null)
         {
-            mobileCanvas.SetActive(LevelManager.instance.isWebPlayer);
+            mobileCanvas.SetActive(LevelManager.instance.isMobile);
             LevelManager.instance.lastScene = LevelManager.instance.curentScene;
             LevelManager.instance.curentScene = currentSceneName;
             GameObject[] levelList = LevelManager.instance.isMobile ? mobileLevels : levels;
@@ -285,7 +285,7 @@ public class GameFlowManager : MonoBehaviour
         {
             return;
         }
-        LevelDifficulty levelDifficulty = DifficultyFactory.GetLevelDifficulty(LevelManager.instance.gameMode);
+        LevelDifficulty levelDifficulty = DifficultyFactory.GetLevelDifficulty(LevelManager.instance != null ? LevelManager.instance.gameMode : LevelManager.GameMode.CHECKPOINT);
         levelDifficulty.setDifficulty(objectiveReachTargets, gameLevel, gameDifficulty);
     }
 }

@@ -12,7 +12,7 @@ public class CheckpointLevelDifficulty : LevelDifficulty
                         objectiveReachTargets.totalTimeInSecs = 30;
                         break;
                     case LevelManager.GameDifficulty.NORMAL:
-                        objectiveReachTargets.totalTimeInSecs = 20;
+                        objectiveReachTargets.totalTimeInSecs = 300;
                         break;
                     case LevelManager.GameDifficulty.HARD:
                         objectiveReachTargets.totalTimeInSecs = 10;
