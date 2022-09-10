@@ -163,7 +163,7 @@ public class GameScore : MonoBehaviour
     private IEnumerator LoadGameData ()
     {
         StartCoroutine(httpWebGLRequest.LoadData(url, gameMode, gameLevel, gameDifficulty));
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         //Debug.Log(httpWebGLRequest.jsonData);
 
         ParseJsonToUserInfo(httpWebGLRequest.jsonData);
@@ -173,8 +173,9 @@ public class GameScore : MonoBehaviour
 
     private async void LoadAsyncGameData()
     {
-        await Task.Run(() =>
+        await Task.Run(async () =>
         {
+            await Task.Delay(1000);
             string json = httpRequest.LoadData(url, gameMode, gameLevel, gameDifficulty);
 
             ParseJsonToUserInfo(json);
@@ -207,7 +208,7 @@ public class GameScore : MonoBehaviour
 
     private IEnumerator CloseGameScore ()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
 
         gameObject.SetActive(false);
     }

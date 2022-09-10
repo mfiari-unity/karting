@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.45086676, g: 0.29552996, b: 0.42656696, a: 1}
+  m_IndirectSpecularColor: {r: 0.45278364, g: 0.2955433, b: 0.42721283, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -864,7 +864,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1207105314}
-  m_LocalRotation: {x: 0.018027127, y: 0.00000009533336, z: 0.0000051682396, w: -0.9998375}
+  m_LocalRotation: {x: 0.018027127, y: 0.0000000910325, z: 0.000005168162, w: -0.9998375}
   m_LocalPosition: {x: 15.7, y: 2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -991,7 +991,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389235981}
-  m_LocalRotation: {x: 0.018027127, y: 0.00000009533336, z: 0.0000051682396, w: -0.9998375}
+  m_LocalRotation: {x: 0.018027127, y: 0.0000000910325, z: 0.000005168162, w: -0.9998375}
   m_LocalPosition: {x: 15.7, y: 2.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -2405,6 +2405,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8063297467940747655, guid: d970183400d605f4e9d3a5ea665257f7,
+        type: 3}
+      propertyPath: baseStats.sensibility
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8063297467940747676, guid: d970183400d605f4e9d3a5ea665257f7,
         type: 3}
       propertyPath: m_RootOrder
@@ -2522,6 +2527,11 @@ PrefabInstance:
         type: 3}
       propertyPath: baseStats.Suspension
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4636561296511847183, guid: d84792e9df1d9c649b51a319c4189085,
+        type: 3}
+      propertyPath: baseStats.sensibility
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4636561296511847183, guid: d84792e9df1d9c649b51a319c4189085,
         type: 3}

@@ -85,7 +85,7 @@ namespace KartGame.KartSystems
         public float AirPercent    { get; private set; }
         public float GroundPercent { get; private set; }
 
-        public ArcadeKart.Stats baseStats = new ArcadeKart.Stats
+        public Stats baseStats = new Stats
         {
             TopSpeed            = 10f,
             Acceleration        = 5f,
@@ -129,7 +129,7 @@ namespace KartGame.KartSystems
         bool canMove = true;
         List<StatPowerup> activePowerupList = new List<StatPowerup>();
         GameObject lastGroundCollided = null;
-        ArcadeKart.Stats finalStats;
+        Stats finalStats;
 
         void Awake()
         {
