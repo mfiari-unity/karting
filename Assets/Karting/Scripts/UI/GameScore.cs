@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ public class GameScore : MonoBehaviour
 
     public PlayerScore[] playerScores;
 
-    public TMP_InputField nameInputField;
+    public InputField nameInputField;
     public GameObject gameScorePanel;
     public GameObject messagePanel;
     public GameObject namePanel;
@@ -268,17 +269,20 @@ public class GameScore : MonoBehaviour
             if (place > 2 && place < users.Length - 2)
             {
                 bool playerIsShow = false;
+                int playerScoreIndex = 0;
                 for (int i = place - 2; i < place + 2; i++)
                 {
                     if (users[i].gameTime < remainTime && !playerIsShow)
                     {
                         place = i + 1;
-                        displayPlayerScore(playerScores[i], remainTime, "You", place, true);
+                        displayPlayerScore(playerScores[playerScoreIndex], remainTime, "You", place, true);
                         playerIsShow = true;
+                        playerScoreIndex++;
                     }
                     int index = playerIsShow ? i + 1 : i;
                     place = index + 1;
-                    displayPlayerScore(playerScores[index], users[i].gameTime, users[i].name, place, false);
+                    displayPlayerScore(playerScores[playerScoreIndex], users[i].gameTime, users[i].name, place, false);
+                    playerScoreIndex++;
                 }
             }
             else if (place == 1 || place == 2)
