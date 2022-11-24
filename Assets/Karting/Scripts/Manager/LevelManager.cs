@@ -46,6 +46,8 @@ public class LevelManager : MonoBehaviour
     public bool isWebPlayer = true;
     public bool isMobile = true;
 
+    public string version;
+
     // Start is called before the first frame update
     void Awake()
     {
