@@ -117,4 +117,17 @@ public class LevelManager : MonoBehaviour
         }
         return false;
     }
+
+    public void ClearGhost ()
+    {
+        for (int i = 0; i < recordedGhost.Count; i++)
+        {
+            GhostSave ghostSave = recordedGhost[i];
+            if (ghostSave.gameDifficulty == gameDifficulty && ghostSave.gameLevel == gameLevel && ghostSave.gameMode == gameMode)
+            {
+
+                recordedGhost.RemoveAt(i);
+            }
+        }
+    }
 }

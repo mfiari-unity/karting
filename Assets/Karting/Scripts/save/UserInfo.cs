@@ -6,7 +6,8 @@ public class UserInfo
 
     public string name;
     public float gameTime;
-    
+    public string ghost;
+
 }
 
 [Serializable]

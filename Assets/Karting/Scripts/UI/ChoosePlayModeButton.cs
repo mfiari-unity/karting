@@ -3,14 +3,12 @@
 public class ChoosePlayModeButton : MonoBehaviour
 {
 
-    public GameObject playModeGO;
-    public GameObject difficultyGO;
+    public MenuSelectManager manager;
     public LevelManager.GameMode gameMode;
 
     public void chooseGameMode()
     {
         LevelManager.instance.gameMode = gameMode;
-        playModeGO.SetActive(false);
-        difficultyGO.SetActive(true);
+        manager.Validate();
     }
 }

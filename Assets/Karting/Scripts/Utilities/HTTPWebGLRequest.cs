@@ -7,6 +7,7 @@ public class HTTPWebGLRequest : MonoBehaviour
 {
 
     public string jsonData;
+    public long responseCode;
 
     public void SaveData(string url, UserInfo userinfo, string gameMode, string gameLevel, string gameDifficulty, string jsonGhost)
     {
@@ -40,32 +41,24 @@ public class HTTPWebGLRequest : MonoBehaviour
         www.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         yield return www.SendWebRequest();
 
-        if (www.responseCode != 200)
-        {
-            //Debug.Log(www.error);
-        }
-        else
-        {
-            //Debug.Log("Form upload complete!");
-        }
+        responseCode = www.responseCode;
     }
 
 
 
     public IEnumerator LoadData(string url, string gameMode, string gameLevel, string gameDifficulty)
     {
-        //Debug.Log("LoadData");
         url = url + "?gameMode=" + gameMode + "&gameLevel=" + gameLevel + "&gameDifficulty=" + gameDifficulty;
         yield return GetJsonData(url);
     }
 
     protected IEnumerator GetJsonData(string url)
     {
-        //Debug.Log(url);
         UnityWebRequest www = UnityWebRequest.Get(url);
         yield return www.SendWebRequest();
 
-        if (www.responseCode != 200)
+        responseCode = www.responseCode;
+        if (responseCode != 200)
         {
             jsonData = "";
         }
@@ -73,7 +66,6 @@ public class HTTPWebGLRequest : MonoBehaviour
         {
             jsonData = www.downloadHandler.text;
         }
-        //Debug.Log(jsonData);
         yield return null;
     }
 }

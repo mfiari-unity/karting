@@ -985,7 +985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updatePopup: {fileID: 862621990}
   startButton: {fileID: 129299356}
-  versionText: {fileID: 0}
+  versionText: {fileID: 665431203}
 --- !u!4 &698869753
 Transform:
   m_ObjectHideFlags: 0

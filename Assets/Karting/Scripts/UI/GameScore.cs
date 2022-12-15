@@ -165,7 +165,6 @@ public class GameScore : MonoBehaviour
     {
         StartCoroutine(httpWebGLRequest.LoadData(url, gameMode, gameLevel, gameDifficulty));
         yield return new WaitForSeconds(1f);
-        //Debug.Log(httpWebGLRequest.jsonData);
 
         ParseJsonToUserInfo(httpWebGLRequest.jsonData);
 
