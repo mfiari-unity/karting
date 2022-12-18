@@ -135,7 +135,19 @@ public class MenuSelectManager : MonoBehaviour
         {
             if (users.Length > i)
             {
-                players[i].init(users[i].name, "", users[i].gameTime.ToString());
+                string place = "";
+                if (i == 0)
+                {
+                    place = "1st";
+                } else if (i == 1)
+                {
+                    place = "2nd";
+                }
+                if (i == 2)
+                {
+                    place = "3rd";
+                }
+                players[i].init(users[i].name, place, users[i].gameTime.ToString());
             } else
             {
                 players[i].hide();
@@ -166,7 +178,6 @@ public class MenuSelectManager : MonoBehaviour
 
     private void LoadGhost ()
     {
-        Debug.Log("LoadGhost");
         gameMode = LevelManager.instance.gameMode.ToString();
         gameLevel = LevelManager.instance.gameLevel.ToString();
         gameDifficulty = LevelManager.instance.gameDifficulty.ToString();

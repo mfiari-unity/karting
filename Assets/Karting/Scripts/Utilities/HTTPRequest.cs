@@ -54,12 +54,22 @@ public class HTTPRequest
         return (HttpWebResponse)request.GetResponse();
     }
 
-
-
     public string LoadData (string url, string gameMode, string gameLevel, string gameDifficulty)
     {
         url = url + "?gameMode=" + gameMode + "&gameLevel=" + gameLevel + "&gameDifficulty=" + gameDifficulty;
         return GetJsonData(url);
+    }
+
+    public float GetLastVersion(string url, bool mobile, bool web)
+    {
+        url = url + "lastGameVersion.php?game=karting&mobile=" + mobile+"&web="+web;
+        string response = GetJsonData(url);
+
+        if (!float.TryParse(response, out float version))
+        {
+            return version;
+        }
+        return 0;
     }
 
     protected string GetJsonData (string url)

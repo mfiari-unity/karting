@@ -29,7 +29,6 @@ public class GhostManager : MonoBehaviour
 
     private List<GhostTransform> recordedGhostTransforms = new List<GhostTransform>();
     private List<GhostTransform> playingGhostTransforms = new List<GhostTransform>();
-    private GhostTransform lastRecordedGhostTransform;
 
     // Start is called before the first frame update
     void Start()
@@ -38,16 +37,12 @@ public class GhostManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (recording)
         {
-            if (kart.position != lastRecordedGhostTransform.position || kart.rotation != lastRecordedGhostTransform.rotation)
-            {
-                var newGhostTransform = new GhostTransform(kart);
-                recordedGhostTransforms.Add(newGhostTransform);
-                lastRecordedGhostTransform = newGhostTransform;
-            }
+            var newGhostTransform = new GhostTransform(kart);
+            recordedGhostTransforms.Add(newGhostTransform);
         }
         if (playing)
         {

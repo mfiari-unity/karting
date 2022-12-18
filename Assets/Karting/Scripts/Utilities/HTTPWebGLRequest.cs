@@ -52,6 +52,12 @@ public class HTTPWebGLRequest : MonoBehaviour
         yield return GetJsonData(url);
     }
 
+    public IEnumerator GetLastVersion(string url, bool mobile, bool web)
+    {
+        url = url + "lastGameVersion.php?game=karting&mobile=" + mobile + "&web=" + web;
+        yield return GetJsonData(url);
+    }
+
     protected IEnumerator GetJsonData(string url)
     {
         UnityWebRequest www = UnityWebRequest.Get(url);
