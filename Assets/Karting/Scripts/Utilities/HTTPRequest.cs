@@ -60,16 +60,12 @@ public class HTTPRequest
         return GetJsonData(url);
     }
 
-    public float GetLastVersion(string url, bool mobile, bool web)
+    public string GetLastVersion(string url, bool mobile, bool web)
     {
         url = url + "lastGameVersion.php?game=karting&mobile=" + mobile+"&web="+web;
         string response = GetJsonData(url);
 
-        if (!float.TryParse(response, out float version))
-        {
-            return version;
-        }
-        return 0;
+        return response;
     }
 
     protected string GetJsonData (string url)

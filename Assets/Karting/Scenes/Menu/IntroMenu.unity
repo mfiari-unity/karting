@@ -1031,6 +1031,7 @@ MonoBehaviour:
   updatePopup: {fileID: 862621990}
   startButton: {fileID: 129299356}
   versionText: {fileID: 665431203}
+  kartDisplay: {fileID: 3934862072311242296}
   httpWebGLRequest: {fileID: 351937413}
 --- !u!4 &698869753
 Transform:
@@ -1394,7 +1395,7 @@ MonoBehaviour:
   remainTime: 0
   isWebPlayer: 1
   isMobile: 1
-  version: 0
+  version: 4.2.0
 --- !u!4 &1007683019
 Transform:
   m_ObjectHideFlags: 0
