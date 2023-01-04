@@ -1393,8 +1393,8 @@ MonoBehaviour:
   curentScene: 
   lastScene: 
   remainTime: 0
-  isWebPlayer: 1
-  isMobile: 1
+  isWebPlayer: 0
+  isMobile: 0
   version: 4.2.0
 --- !u!4 &1007683019
 Transform:
