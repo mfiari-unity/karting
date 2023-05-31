@@ -131,7 +131,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 4.2.0
+  bundleVersion: 4.2.1
   preloadedAssets:
   - {fileID: 11400000, guid: 5cd51aa986f608f4082fbdc7aafd35ac, type: 2}
   metroInputSource: 0
@@ -179,7 +179,7 @@ PlayerSettings:
     Standalone: com.unity.template.kart
   buildNumber: {}
   AndroidBundleVersionCode: 1
-  AndroidMinSdkVersion: 19
+  AndroidMinSdkVersion: 21
   AndroidTargetSdkVersion: 0
   AndroidPreferredInstallLocation: 1
   aotOptions: 
