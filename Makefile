@@ -18,6 +18,17 @@ add-github:
 add-git-all: 	
 	git remote add all ssh://mfiari@80.93.90.133:2222/data/git/games/karting.git
 	git remote set-url --add all https://github.com/mfiari-unity/karting.git
+	
+.PHONY: clean # remove all file and folder
+clean: 	
+	rm -rf ./Library
+	rm -rf ./Logs
+	rm -rf ./obj
+	rm -rf ./Packages
+	rm -rf ./Temp
+	rm -rf ./UserSettings
+	rm *.csproj
+	rm *.sln
 
 
 

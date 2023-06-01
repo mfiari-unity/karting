@@ -1,8 +1,13 @@
 # Karting
 
 ### Pré-requis
-* Unity 2019.4.40f1
+* Unity 2020.3.47f1
 * JDK
+
+### Packages
+* Barracuda:1.0.4
+* Cinemachine:2.6.17
+* ProBuilder:4.5.2
 
 ### Configurations
 

@@ -1,11 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.Serialization;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
 using MLAgents.InferenceBrain;
-using Barracuda;
 
 /**
  * Welcome to Unity Machine Learning Agents (ML-Agents).
@@ -407,7 +405,7 @@ namespace MLAgents
         /// the ModelRunner will use </param>
         /// <returns> The ModelRunner compatible with the input settings</returns>
         public ModelRunner GetOrCreateModelRunner(
-            NNModel model, BrainParameters brainParameters, InferenceDevice inferenceDevice)
+            Unity.Barracuda.NNModel model, BrainParameters brainParameters, InferenceDevice inferenceDevice)
         {
             var modelRunner = m_ModelRunners.Find(x => x.HasModel(model, inferenceDevice));
             if (modelRunner == null)

@@ -1,6 +1,5 @@
-using Barracuda;
+using Unity.Barracuda;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace MLAgents
