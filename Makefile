@@ -1,5 +1,4 @@
 
-
 # @see http://marmelab.com/blog/2016/02/29/auto-documented-makefile.html
 .DEFAULT_GOAL := help
 .PHONY: help
@@ -29,10 +28,3 @@ clean:
 	rm -rf ./UserSettings
 	rm *.csproj
 	rm *.sln
-
-
-
-
-
-
-
