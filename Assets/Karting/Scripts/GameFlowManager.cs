@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using KartGame.KartSystems;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public enum GameState{Play, Won, Lost}
 
@@ -61,6 +62,8 @@ public class GameFlowManager : MonoBehaviour
 
     public GameObject mobileCanvas;
 
+    public CinemachineVirtualCamera cinemachineCamera;
+
     private void Awake()
     {
         if (LevelManager.instance != null)
@@ -69,6 +72,7 @@ public class GameFlowManager : MonoBehaviour
             LevelManager.instance.lastScene = LevelManager.instance.curentScene;
             LevelManager.instance.curentScene = currentSceneName;
             GameObject[] levelList = LevelManager.instance.isMobile ? mobileLevels : levels;
+            playerKart = LevelManager.instance.arcadeKart;
             LoadLevel(LevelManager.instance.gameLevel, levelList);
             setDifficulty(LevelManager.instance.gameLevel, LevelManager.instance.gameDifficulty);
         }
@@ -91,6 +95,9 @@ public class GameFlowManager : MonoBehaviour
             }
             DebugUtility.HandleErrorIfNullFindObject<ArcadeKart, GameFlowManager>(playerKart, this);
         }
+        playerKart = Instantiate(playerKart, new Vector3(15.7f, 1, 5), Quaternion.identity);
+        cinemachineCamera.Follow = playerKart.transform;
+        cinemachineCamera.LookAt = playerKart.transform;
 
         m_ObjectiveManager = FindObjectOfType<ObjectiveManager>();
 		DebugUtility.HandleErrorIfNullFindObject<ObjectiveManager, GameFlowManager>(m_ObjectiveManager, this);
