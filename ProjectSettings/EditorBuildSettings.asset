@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Karting/Scenes/Mode/BeatTheClockScene.unity
     guid: 97dbde6e78b59104c841576a611f05f8
-  - enabled: 0
+  - enabled: 1
     path: Assets/Karting/Scenes/Mode/LapScene.unity
     guid: f12c1c019bd69d646bfb2148efcf0577
   - enabled: 1
