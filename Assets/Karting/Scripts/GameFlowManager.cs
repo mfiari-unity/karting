@@ -64,6 +64,8 @@ public class GameFlowManager : MonoBehaviour
 
     public CinemachineVirtualCamera cinemachineCamera;
 
+    private GameObject level;
+
     private void Awake()
     {
         if (LevelManager.instance != null)
@@ -95,7 +97,16 @@ public class GameFlowManager : MonoBehaviour
             }
             DebugUtility.HandleErrorIfNullFindObject<ArcadeKart, GameFlowManager>(playerKart, this);
         }
-        playerKart = Instantiate(playerKart, new Vector3(15.7f, 1, 5), Quaternion.identity);
+        Vector3 positionToSpawn = new Vector3(15.7f, 1, 5);
+        if (level)
+        {
+            SpawnPoint[] spawnPoints = level.GetComponentsInChildren<SpawnPoint>();
+            if (spawnPoints != null && spawnPoints.Length > 0)
+            {
+                positionToSpawn = spawnPoints[0].transform.position;
+            }
+        }
+        playerKart = Instantiate(playerKart, positionToSpawn, Quaternion.identity);
         cinemachineCamera.Follow = playerKart.transform;
         cinemachineCamera.LookAt = playerKart.transform;
 
@@ -260,29 +271,29 @@ public class GameFlowManager : MonoBehaviour
         {
             return;
         }
-        GameObject level;
+        GameObject levelToInstantiate;
         switch (gameLevel)
         {
             case LevelManager.GameLevel.OVAL:
-                level = levelList[0];
+                levelToInstantiate = levelList[0];
                 break;
             case LevelManager.GameLevel.ADDITIONAL:
-                level = levelList[1];
+                levelToInstantiate = levelList[1];
                 break;
             case LevelManager.GameLevel.COUNTRY:
-                level = levelList[2];
+                levelToInstantiate = levelList[2];
                 break;
             case LevelManager.GameLevel.MOUNTAIN:
-                level = levelList[3];
+                levelToInstantiate = levelList[3];
                 break;
             case LevelManager.GameLevel.WINDING:
-                level = levelList[4];
+                levelToInstantiate = levelList[4];
                 break;
             default:
-                level = levelList[0];
+                levelToInstantiate = levelList[0];
                 break;
         }
-        Instantiate(level);
+        level = Instantiate(levelToInstantiate);
     }
 
     private void setDifficulty (LevelManager.GameLevel gameLevel, LevelManager.GameDifficulty gameDifficulty)

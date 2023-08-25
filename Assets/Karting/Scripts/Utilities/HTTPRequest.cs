@@ -73,7 +73,15 @@ public class HTTPRequest
         var json = "";
         using (WebClient wc = new WebClient())
         {
-            json = wc.DownloadString(url);
+            try
+            {
+                json = wc.DownloadString(url);
+            }
+            catch (WebException ex)
+            {
+                json = "";
+            }
+            
         }
         return json;
     }
