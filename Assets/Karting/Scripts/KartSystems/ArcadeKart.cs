@@ -11,7 +11,7 @@ namespace KartGame.KartSystems
         [System.Serializable]
         public class StatPowerup
         {
-            public ArcadeKart.Stats modifiers;
+            public Stats modifiers;
             public string PowerUpID;
             public float ElapsedTime;
             public float MaxTime;
@@ -165,6 +165,35 @@ namespace KartGame.KartSystems
             if (canMove)
             {
                 MoveVehicle(accel, turn);
+            }
+            GroundAirbourne();
+
+            // animation
+            AnimateSuspension();
+        }
+
+        protected void AutoMoveVehicle(float accelInput, float turnInput)
+        {
+            ResetIfStuck();
+
+            GatherInputs();
+
+            // apply our powerups to create our finalStats
+            TickPowerups();
+
+            // apply our physics properties
+            Rigidbody.centerOfMass = Rigidbody.transform.InverseTransformPoint(CenterOfMass.position);
+
+            // calculate how grounded and airborne we are
+            int groundedCount = CountGroundedWheels(out float minHeight);
+            GroundPercent = (float)groundedCount / Wheels.Length;
+            AirPercent = 1 - GroundPercent;
+
+            // apply vehicle physics
+            GroundVehicle(minHeight);
+            if (canMove)
+            {
+                MoveVehicle(accelInput, turnInput);
             }
             GroundAirbourne();
 
