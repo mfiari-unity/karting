@@ -1371,8 +1371,8 @@ MonoBehaviour:
   lastScene: 
   remainTime: 0
   isWebPlayer: 0
-  isMobile: 0
-  version: 4.3.0
+  isMobile: 1
+  version: 4.4.0
 --- !u!4 &1007683019
 Transform:
   m_ObjectHideFlags: 0

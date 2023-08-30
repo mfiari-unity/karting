@@ -109,6 +109,11 @@ public class GameFlowManager : MonoBehaviour
         playerKart = Instantiate(playerKart, positionToSpawn, Quaternion.identity);
         cinemachineCamera.Follow = playerKart.transform;
         cinemachineCamera.LookAt = playerKart.transform;
+        KeyboardInput input = playerKart.GetComponent<KeyboardInput>();
+        if (input != null && mobileCanvas != null)
+        {
+            input.mobileInput = mobileCanvas.GetComponent<MobileInput>();
+        }
 
         m_ObjectiveManager = FindObjectOfType<ObjectiveManager>();
 		DebugUtility.HandleErrorIfNullFindObject<ObjectiveManager, GameFlowManager>(m_ObjectiveManager, this);

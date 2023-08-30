@@ -22,7 +22,8 @@ public class LevelManager : MonoBehaviour
         COUNTRY,
         MOUNTAIN,
         OVAL,
-        WINDING
+        WINDING,
+        CIRCUIT
     }
     public GameLevel gameLevel;
 

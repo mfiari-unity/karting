@@ -72,6 +72,16 @@ public class MenuSelectManager : MonoBehaviour
             chooseIndex++;
             choosePanels[chooseIndex].SetActive(true);
             title.text = titles[chooseIndex];
+            // if we are on the select track page, we call init method on choose track menu
+            if (chooseIndex == 3)
+            {
+                ChooseTrackMenu chooseTrackMenu = choosePanels[chooseIndex].GetComponent<ChooseTrackMenu>();
+                if (chooseTrackMenu != null)
+                {
+                    chooseTrackMenu.init();
+                }
+            }
+            // if we are on the select ghost page, we load the ghost from web
             if (chooseIndex == 4)
             {
                 GetGhosts();
