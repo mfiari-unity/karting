@@ -8,7 +8,7 @@ namespace KartGame.AI
     /// <summary>
     /// The KartAgent will drive the inputs for the KartController.
     /// </summary>
-    public class KartAgentIA : ArcadeKart
+    public class KartAgentIA : MonoBehaviour
     {
 
         #region Training Modes

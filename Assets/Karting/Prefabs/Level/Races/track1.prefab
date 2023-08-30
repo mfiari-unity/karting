@@ -6063,30 +6063,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4363a65dd18950745af52c39b833c987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseStats:
-    TopSpeed: 10
-    Acceleration: 5
-    ReverseSpeed: 5
-    ReverseAcceleration: 5
-    AccelerationCurve: 0.8
-    Braking: 10
-    CoastingDrag: 4
-    Grip: 0.7
-    Steer: 5
-    AddedGravity: 1
-    Suspension: 0.2
-  CenterOfMass: {fileID: 5169908400901419976}
-  Wheels:
-  - {fileID: 5169908402181673945}
-  - {fileID: 5169908401908899975}
-  - {fileID: 5169908401529942197}
-  - {fileID: 5169908400926699295}
-  GroundLayers:
-    serializedVersion: 2
-    m_Bits: 65331
-  RaycastDist: 0.3
-  MinHeightThreshold: 0.02
-  SuspensionBody: {fileID: 6273702834057998497}
   InitCheckpointIndex: 0
   Colliders:
   - {fileID: 3319044632043755468}
@@ -6123,46 +6099,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 16384
   kart: {fileID: 5169908400740452684}
-  speed: 10
+  speed: 8
 --- !u!4 &5169908400740452695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8413615441882719440, guid: 4a54955f164002d42b1092df8c7b1c49,
-    type: 3}
-  m_PrefabInstance: {fileID: 3709874167736724871}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5169908400901419976 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8413615441784675919, guid: 4a54955f164002d42b1092df8c7b1c49,
-    type: 3}
-  m_PrefabInstance: {fileID: 3709874167736724871}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5169908400926699295 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8413615441843536536, guid: 4a54955f164002d42b1092df8c7b1c49,
-    type: 3}
-  m_PrefabInstance: {fileID: 3709874167736724871}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5169908401529942197 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8413615441094090034, guid: 4a54955f164002d42b1092df8c7b1c49,
-    type: 3}
-  m_PrefabInstance: {fileID: 3709874167736724871}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5169908401908899975 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8413615440643624192, guid: 4a54955f164002d42b1092df8c7b1c49,
-    type: 3}
-  m_PrefabInstance: {fileID: 3709874167736724871}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &5169908402181673945 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8413615441443880542, guid: 4a54955f164002d42b1092df8c7b1c49,
-    type: 3}
-  m_PrefabInstance: {fileID: 3709874167736724871}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6273702834057998497 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7236358377179913510, guid: 4a54955f164002d42b1092df8c7b1c49,
     type: 3}
   m_PrefabInstance: {fileID: 3709874167736724871}
   m_PrefabAsset: {fileID: 0}
