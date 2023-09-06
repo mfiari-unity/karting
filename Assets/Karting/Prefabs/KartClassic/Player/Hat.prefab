@@ -788,7 +788,7 @@ MonoBehaviour:
     Acceleration: 10
     ReverseSpeed: 5
     ReverseAcceleration: 5
-    AccelerationCurve: 0.2
+    AccelerationCurve: 0.3
     Braking: 8
     CoastingDrag: 4
     Grip: 0.95

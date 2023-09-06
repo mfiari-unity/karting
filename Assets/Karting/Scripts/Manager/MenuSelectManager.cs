@@ -63,7 +63,7 @@ public class MenuSelectManager : MonoBehaviour
 
     public void Validate ()
     {
-        if (chooseIndex >= choosePanels.Length -1)
+        if (chooseIndex >= choosePanels.Length -1 || (LevelManager.GameMode.LAP.Equals(LevelManager.instance.gameMode) && chooseIndex == 3))
         {
             SceneManager.LoadSceneAsync(getScene());
         } else
@@ -168,6 +168,10 @@ public class MenuSelectManager : MonoBehaviour
     private void ClearGhosts ()
     {
         LevelManager.instance.ClearGhost();
+        for (int i = 0; i < players.Length; i++)
+        {
+            players[i].hide();
+        }
     }
 
     private string getScene()
@@ -239,6 +243,7 @@ public class MenuSelectManager : MonoBehaviour
         }
         catch (Exception e)
         {
+            Debug.LogError(e);
             users = new UserInfo[0];
             state = MenuSelectState.ERROR;
         }

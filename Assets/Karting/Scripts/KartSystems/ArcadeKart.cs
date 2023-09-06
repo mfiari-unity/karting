@@ -535,5 +535,10 @@ namespace KartGame.KartSystems
         {
             canMove = move;
         }
+
+        public bool GetCanMove ()
+        {
+            return canMove;
+        }
     }
 }

@@ -90,7 +90,7 @@ public class GameFlowManager : MonoBehaviour
 
         if (autoFindKarts)
         {
-            karts = FindObjectsOfType<ArcadeKart>();
+            karts = FindObjectsOfType<ArcadeKart>(true);
             if (karts.Length > 0)
             {
                 if (!playerKart) playerKart = karts[0];
@@ -106,7 +106,14 @@ public class GameFlowManager : MonoBehaviour
                 positionToSpawn = spawnPoints[0].transform.position;
             }
         }
-        playerKart = Instantiate(playerKart, positionToSpawn, Quaternion.identity);
+        if (LevelManager.GameMode.LAP.Equals(LevelManager.instance.gameMode))
+        {
+            Quaternion quaternion = Quaternion.Euler(0, -90, 0);
+            playerKart = Instantiate(playerKart, positionToSpawn, quaternion);
+        } else
+        {
+            playerKart = Instantiate(playerKart, positionToSpawn, Quaternion.identity);
+        }
         cinemachineCamera.Follow = playerKart.transform;
         cinemachineCamera.LookAt = playerKart.transform;
         KeyboardInput input = playerKart.GetComponent<KeyboardInput>();
@@ -131,6 +138,7 @@ public class GameFlowManager : MonoBehaviour
         {
 			k.SetCanMove(false);
         }
+        playerKart.SetCanMove(false);
 
         //run race countdown animation
         ShowRaceCountdownAnimation();
@@ -149,6 +157,7 @@ public class GameFlowManager : MonoBehaviour
         {
 			k.SetCanMove(true);
         }
+        playerKart.SetCanMove(true);
         m_TimeManager.StartRace();
         if (ghostManager != null)
         {

@@ -1,4 +1,3 @@
-using MLAgents;
 using KartGame.KartSystems;
 using UnityEngine;
 
@@ -31,7 +30,7 @@ namespace KartGame.AI
         float acceleration;
         float steering;
 
-        int checkpointIndex;
+        public int checkpointIndex;
 
         void Start()
         {
@@ -43,6 +42,9 @@ namespace KartGame.AI
 
         void FixedUpdate()
         {
+            if (!kart.GetCanMove()) {
+                return;
+            }
             // Find the next checkpoint when registering the current checkpoint that the agent has passed.
             int next = (checkpointIndex + 1) % Colliders.Length;
             Collider nextCollider = Colliders[next];
@@ -50,10 +52,6 @@ namespace KartGame.AI
             var step = speed * Time.deltaTime; // calculate distance to move
             kart.transform.position = Vector3.MoveTowards(kart.transform.position, nextCollider.transform.position, step);
             kart.transform.forward = Vector3.RotateTowards(kart.transform.forward, nextCollider.transform.position - kart.transform.position, step, 0.0f);
-
-            //Vector3 direction = Vector3.MoveTowards(kart.transform.position, nextCollider.transform.position, step);
-
-            //AutoMoveVehicle(direction.x, direction.y);
 
         }
 
@@ -68,6 +66,10 @@ namespace KartGame.AI
             if (triggered > 0 && index > checkpointIndex || index == 0 && checkpointIndex == Colliders.Length - 1)
             {
                 checkpointIndex++;
+            }
+            if (checkpointIndex == Colliders.Length)
+            {
+                checkpointIndex = 0;
             }
         }
 

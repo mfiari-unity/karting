@@ -13,11 +13,6 @@ public class GhostPlayer : MonoBehaviour
     [SerializeField]
     private Text playerTimeText;
 
-    void Start ()
-    {
-        player.SetActive(false);
-    }
-
     public void init (string name, string position, string time)
     {
         playerButtonText.text = name;

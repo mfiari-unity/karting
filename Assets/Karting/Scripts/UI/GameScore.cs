@@ -192,6 +192,7 @@ public class GameScore : MonoBehaviour
         }
         catch (Exception e)
         {
+            Debug.LogError(e);
             users = new UserInfo[0];
         }
         Array.Sort(users, delegate (UserInfo user1, UserInfo user2) {
